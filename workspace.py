@@ -67,11 +67,12 @@ class WorkSpace:
         ]
 
     def BuildWorkSpace(self,faissPath,metaPath,pdfPath,convoPath):
+        os.makedirs(self.path, exist_ok=True)
         self.faissPath = os.path.join(self.path,faissPath)
         self.metaPath = os.path.join(self.path,metaPath)
         self.pdfPath = os.path.join(self.path,pdfPath)
         self.convoPath = os.path.join(self.path,convoPath)
-        self.BuildConversationStorage(convoPath)
+        self.BuildConversationStorage(self.convoPath)
         conn = sqlite3.connect("program.db")
         cursor = conn.cursor()
 
@@ -118,7 +119,7 @@ class WorkSpace:
         acceptedPages = Filter(masterQuery,pages)
         acceptedLinks = []
         for page in acceptedPages:
-            acceptedLinks.append(page.get("pdf_links",""))
+            acceptedLinks.extend(page.get("pdf_links",""))
         Download(acceptedLinks,self.pdfPath)
 
             

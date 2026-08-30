@@ -67,7 +67,7 @@ def BuildIndex(faissPath,pdfFolder,metadataPath = "metadata.pkl"):
 
         for page in pages:
 
-            chunks = chunk_text(page["text"])
+            chunks = chunk_text(page["text"],size=800, overlap=100)
 
             for chunk_number, chunk in enumerate(chunks):
 
