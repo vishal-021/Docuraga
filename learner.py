@@ -4,11 +4,24 @@ import fitz
 import faiss
 import numpy as np
 
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, CrossEncoder
 
-model = SentenceTransformer("BAAI/bge-base-en-v1.5")
+import config
+
+# Embedding model comes from config.py. After fine-tuning, set
+# EMBED_MODEL = "models/bge-finetuned" there and rebuild each workspace's index.
+model = SentenceTransformer(config.EMBED_MODEL)
 
 dimension = model.get_embedding_dimension()
+
+_reranker = None
+
+
+def get_reranker():
+    global _reranker
+    if _reranker is None:
+        _reranker = CrossEncoder(config.RERANK_MODEL)
+    return _reranker
 
 
 def extract_pdf(pdf_path):
@@ -31,7 +44,7 @@ def extract_pdf(pdf_path):
     return pages
 
 
-def chunk_text(text, size,overlap):
+def chunk_text(text, size, overlap):
 
     chunks = []
 
@@ -67,22 +80,21 @@ def BuildIndex(faissPath,pdfFolder,metadataPath = "metadata.pkl"):
 
         for page in pages:
 
-            chunks = chunk_text(page["text"],size=800, overlap=100)
+            chunks = chunk_text(page["text"], size=config.CHUNK_SIZE, overlap=config.CHUNK_OVERLAP)
 
-            for chunk_number, chunk in enumerate(chunks):
+            keep = [(n, c) for n, c in enumerate(chunks) if len(c.strip()) >= 50]
+            if not keep:
+                continue
 
-                if len(chunk.strip()) < 50:
-                    continue
+            # encode all chunks of the page in one batch (much faster than one by one)
+            embeddings = model.encode(
+                [c for _, c in keep],
+                normalize_embeddings=True
+            ).astype(np.float32)
 
-                embedding = model.encode(
-                    chunk,
-                    normalize_embeddings=True
-                ).astype(np.float32)
+            index.add(embeddings)
 
-                index.add(
-                    embedding.reshape(1, -1)
-                )
-
+            for chunk_number, chunk in keep:
                 metadata.append({
                     "pdf": filename,
                     "page": page["page"],
@@ -103,6 +115,11 @@ def BuildIndex(faissPath,pdfFolder,metadataPath = "metadata.pkl"):
 
 def load_index(faissPath,metadataPath):
 
+    if not os.path.exists(faissPath):
+        raise FileNotFoundError(
+            "No index yet. Add PDFs and click 'Index Folder' (or use Gather) first."
+        )
+
     index = faiss.read_index(faissPath)
 
     with open(metadataPath, "rb") as f:
@@ -115,31 +132,43 @@ def Search(faissPath, metaPath,question, k=5):
 
     index, metadata = load_index(faissPath,metaPath)
 
+    if index.ntotal == 0:
+        return []
+
     query = model.encode(
-        question,
+        config.QUERY_PREFIX + question,
         normalize_embeddings=True
     ).astype(np.float32)
 
+    # fetch more candidates when reranking, then keep the best k
+    n_fetch = max(k, config.RERANK_CANDIDATES) if config.USE_RERANKER else k
+
     scores, ids = index.search(
         query.reshape(1, -1),
-        k
+        min(n_fetch, index.ntotal)
     )
 
-    results = []
+    candidates = []
 
     for score, idx in zip(scores[0], ids[0]):
 
         if idx == -1:
             continue
 
-        results.append({
+        candidates.append({
             "score": float(score),
             "pdf": metadata[idx]["pdf"],
             "page": metadata[idx]["page"],
             "text": metadata[idx]["text"]
         })
 
-    return results
+    if config.USE_RERANKER and candidates:
+        ce_scores = get_reranker().predict([(question, c["text"]) for c in candidates])
+        for c, s in zip(candidates, ce_scores):
+            c["score"] = float(s)
+        candidates.sort(key=lambda c: c["score"], reverse=True)
+
+    return candidates[:k]
 
 #returns prompt and result of RAG
 def BuildPrompt(faissPath,metaPath,question,res = 5):

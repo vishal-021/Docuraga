@@ -1,0 +1,158 @@
+{"question": "How does the method described by Khalid and Kameneva (2025) address the challenges of partial or distorted footprints?", "chunk_id": 23, "split": "test"}
+{"question": "What type of model is used in the study by Shen and Jiang (2025) for footprint detection, and what is its primary function?", "chunk_id": 23, "split": "test"}
+{"question": "What are the five classes included in the bloodstain dataset used for training the deep learning model?", "chunk_id": 25, "split": "train"}
+{"question": "How many barefoot footprint images are included in the UNB StepUP-P150 dataset used for the study?", "chunk_id": 25, "split": "train"}
+{"question": "What types of ground-truth labels are provided for the footprint images in the UNB StepUP-P150 dataset?", "chunk_id": 25, "split": "train"}
+{"question": "What is the main focus of the research on forensic gender and stature from footprints?", "chunk_id": 7, "split": "test"}
+{"question": "How does the study on hyperspectral bloodstain classification aim to improve analysis?", "chunk_id": 7, "split": "test"}
+{"question": "Define the term 'likelihood ratio approach' as it is used in bloodstain pattern analysis.", "chunk_id": 7, "split": "test"}
+{"question": "How do enhanced Siamese networks contribute to the comparison of barefoot and in-socks footprints?", "chunk_id": 22, "split": "train"}
+{"question": "What limitation is mentioned regarding the use of data extraction techniques in detecting barefoot footprints?", "chunk_id": 22, "split": "train"}
+{"question": "What is the primary function of the probabilistic output in the forensic framework described?", "chunk_id": 45, "split": "train"}
+{"question": "Why is validation with real crime scenes data important for the forensic framework?", "chunk_id": 45, "split": "train"}
+{"question": "How can the automated report feature of the framework aid in forensic investigations?", "chunk_id": 45, "split": "train"}
+{"question": "What is the primary advantage of using a Vision Transformer over traditional convolutional networks in bloodstain pattern analysis?", "chunk_id": 33, "split": "train"}
+{"question": "How does the input image processing differ when using a Vision Transformer for bloodstain pattern classification?", "chunk_id": 33, "split": "train"}
+{"question": "Define the role of the transformer encoder layers in the bloodstain pattern analysis module.", "chunk_id": 33, "split": "train"}
+{"question": "What statistical method did Zou and Stern use to classify bloodstain origins, and how does it differ from other approaches?", "chunk_id": 19, "split": "test"}
+{"question": "In what way does the work of Zou and Stern fall short of addressing broader bloodstain mechanism classification?", "chunk_id": 19, "split": "test"}
+{"question": "Define the Vision Transformer and explain its advantage over convolutional networks in analyzing bloodstain patterns.", "chunk_id": 59, "split": "train"}
+{"question": "Compare the efficiency of ResNet-18 with other models in the context of footprint sample identification.", "chunk_id": 59, "split": "train"}
+{"question": "Describe the preprocessing steps used to prepare images for analysis in the given passage.", "chunk_id": 59, "split": "train"}
+{"question": "What specific demographic information was predicted from footprint impressions in the study?", "chunk_id": 46, "split": "test"}
+{"question": "How does the use of deep learning improve the detection of bloodstain patterns and footprint impressions?", "chunk_id": 46, "split": "test"}
+{"question": "Define the term 'footprint demographic outputs' as it is used in the context of footprint analysis.", "chunk_id": 46, "split": "test"}
+{"question": "What is the purpose of the Bloodstain Pattern Analysis Module in the system?", "chunk_id": 9, "split": "test"}
+{"question": "How does the system workflow contribute to the overall functionality of the design?", "chunk_id": 9, "split": "test"}
+{"question": "Define the role of the Interpretation and Reporting section in the methodology.", "chunk_id": 9, "split": "test"}
+{"question": "What is the accuracy rate of the model based on the ResNet-18 architecture for gender classification in the footprint module?", "chunk_id": 40, "split": "train"}
+{"question": "Why are the hypothesis scores described as modest and close to one another in the ranked scenario hypotheses?", "chunk_id": 40, "split": "train"}
+{"question": "How does the footprint module's performance on the UNB StepUP-P150 dataset reflect the model's ability to distinguish between different footprint characteristics?", "chunk_id": 40, "split": "train"}
+{"question": "What are the main objectives of using transformer-based and CNN-based architectures in forensic class recognition?", "chunk_id": 18, "split": "train"}
+{"question": "How does the framework contribute to the standardization of evidence analysis in forensic science?", "chunk_id": 18, "split": "train"}
+{"question": "Define the role of datasets and system design in evaluating the effectiveness of deep learning for bloodstain pattern analysis.", "chunk_id": 18, "split": "train"}
+{"question": "What is the accuracy rate of the system in classifying gender based on bloodstain patterns?", "chunk_id": 42, "split": "train"}
+{"question": "How did the system perform when classifying footprints with damaged areas?", "chunk_id": 42, "split": "train"}
+{"question": "What factors contributed to most of the classification errors in footprint analysis?", "chunk_id": 42, "split": "train"}
+{"question": "What is the purpose of the bloodstain pattern analysis module in the system?", "chunk_id": 31, "split": "train"}
+{"question": "How does the system determine whether an image contains blood?", "chunk_id": 31, "split": "train"}
+{"question": "How does the proposed framework differ from traditional methods in terms of output characteristics?", "chunk_id": 16, "split": "train"}
+{"question": "What two types of forensic evidence are being studied in the seminar?", "chunk_id": 16, "split": "train"}
+{"question": "What machine learning techniques were used to identify an individual’s gender and height?", "chunk_id": 21, "split": "train"}
+{"question": "Why were statistical methods and feature engineering implemented in the analysis?", "chunk_id": 21, "split": "train"}
+{"question": "Define the role of the k-nearest-neighbour classifier in the study.", "chunk_id": 21, "split": "train"}
+{"question": "What are the key factors used to determine the characteristics of a stain in forensic analysis?", "chunk_id": 36, "split": "train"}
+{"question": "How does the program assist in predicting the age group of an individual based on a footprint image?", "chunk_id": 36, "split": "train"}
+{"question": "Define the term 'streaky stain' and explain its relevance in forensic analysis.", "chunk_id": 36, "split": "train"}
+{"question": "What is the purpose of distinguishing between different footprint shapes, sizes, and pressure distributions?", "chunk_id": 41, "split": "test"}
+{"question": "How does the system classify footprints based on gender for different age groups?", "chunk_id": 41, "split": "test"}
+{"question": "Define the term 'footprint classification' as it is used in the context of gender determination.", "chunk_id": 41, "split": "test"}
+{"question": "What is the F1-Score and how is it calculated in the context of bloodstain classification?", "chunk_id": 29, "split": "train"}
+{"question": "Why were Python frameworks like TensorFlow and PyTorch chosen for developing the deep learning models?", "chunk_id": 29, "split": "train"}
+{"question": "What is the main purpose of the hybrid CNN with factor analysis in hyperspectral bloodstain classification?", "chunk_id": 20, "split": "train"}
+{"question": "Why is the use of hyperspectral imaging equipment a limitation in bloodstain classification methods?", "chunk_id": 20, "split": "train"}
+{"question": "How do machine learning techniques help in determining an individual's gender and stature from footprints?", "chunk_id": 20, "split": "train"}
+{"question": "How does the system differentiate between various types of bloodstain patterns?", "chunk_id": 11, "split": "train"}
+{"question": "What is one limitation of using controlled training data in model development for forensic applications?", "chunk_id": 50, "split": "train"}
+{"question": "Why might the lack of quantitative results for height estimation be a concern in footprint analysis models?", "chunk_id": 50, "split": "train"}
+{"question": "Define the term 'controlled training data' in the context of machine learning models for crime scene analysis.", "chunk_id": 50, "split": "train"}
+{"question": "What is the primary method used to differentiate transfer stains from impact stains in the analysis of bloodstain patterns?", "chunk_id": 39, "split": "train"}
+{"question": "How does the system determine the likely mechanism of a bloodstain pattern, such as impact or transfer?", "chunk_id": 39, "split": "train"}
+{"question": "Why is it beneficial for forensic labs to use models that can operate on normal photography and footprint images?", "chunk_id": 48, "split": "train"}
+{"question": "Define the term 'common preprocessing pipeline' as it is used in the context of forensic evidence analysis.", "chunk_id": 48, "split": "train"}
+{"question": "What specific qualities did the author mention as being provided by the seminar coordinators?", "chunk_id": 3, "split": "train"}
+{"question": "How does the system ensure consistency in feature extraction across different types of evidence images?", "chunk_id": 30, "split": "train"}
+{"question": "Define the role of the two analysis modules in identifying bloodstain mechanisms and types.", "chunk_id": 30, "split": "train"}
+{"question": "What is the main focus of the study on barefoot footprint detection using YOLOV8-StarNet?", "chunk_id": 55, "split": "train"}
+{"question": "Why is a Siamese network approach used for comparing barefoot and sock-clad footprints?", "chunk_id": 55, "split": "train"}
+{"question": "How does the enhanced Siamese network improve the cross-comparison of footprint evidence?", "chunk_id": 55, "split": "train"}
+{"question": "How did the friends and classmates of S7 CSE-(AI) contribute to the author's academic experience?", "chunk_id": 4, "split": "train"}
+{"question": "What is the main focus of the base paper mentioned in the reference list?", "chunk_id": 57, "split": "train"}
+{"question": "Why is deep learning considered beneficial for analyzing bloodstain patterns and footprint impressions?", "chunk_id": 57, "split": "train"}
+{"question": "How does the base paper contribute to the field of forensic science?", "chunk_id": 57, "split": "train"}
+{"question": "What is the main focus of the research described in the first citation?", "chunk_id": 54, "split": "train"}
+{"question": "Why is a likelihood ratio approach significant in bloodstain pattern analysis?", "chunk_id": 54, "split": "train"}
+{"question": "How does the cited work propose to improve the detection of bloodstain patterns?", "chunk_id": 54, "split": "train"}
+{"question": "Why does poor image quality negatively affect the performance of deep learning models in analyzing bloodstain patterns?", "chunk_id": 49, "split": "train"}
+{"question": "How do natural variations in human characteristics contribute to classification errors in footprints across different age groups?", "chunk_id": 49, "split": "train"}
+{"question": "What is the purpose of bloodstain classification in forensic analysis?", "chunk_id": 10, "split": "train"}
+{"question": "How does deep learning improve the interpretation of footprint impressions?", "chunk_id": 10, "split": "train"}
+{"question": "Define the role of similarity index reports in evaluating research work.", "chunk_id": 10, "split": "train"}
+{"question": "What is the main purpose of using deep learning in the analysis of bloodstain patterns and footprint impressions?", "chunk_id": 0, "split": "train"}
+{"question": "Why is the detection of bloodstain patterns and footprint impressions important in forensic science?", "chunk_id": 0, "split": "train"}
+{"question": "How does deep learning contribute to improving the accuracy of forensic analysis in criminal investigations?", "chunk_id": 0, "split": "train"}
+{"question": "What are the data augmentation techniques used in the training process?", "chunk_id": 60, "split": "train"}
+{"question": "How is the multi-task footprint network trained for gender and age classification?", "chunk_id": 60, "split": "train"}
+{"question": "Define the loss functions used for height estimation in the multi-task model.", "chunk_id": 60, "split": "train"}
+{"question": "What is the formula used to calculate the F1-Score in the context of evaluating deep learning models for bloodstain pattern detection?", "chunk_id": 28, "split": "train"}
+{"question": "How are the training data enhanced to improve the performance of deep learning models in the study?", "chunk_id": 28, "split": "train"}
+{"question": "Compare the definitions of precision and recall in the evaluation of classification metrics for footprint impression analysis.", "chunk_id": 28, "split": "train"}
+{"question": "What is the significance of the value 0.5 in the context of model uncertainty?", "chunk_id": 44, "split": "test"}
+{"question": "Why do adolescents pose a challenge in classifying footprints according to age groups?", "chunk_id": 44, "split": "test"}
+{"question": "What is the purpose of the preprocessing steps in the UNB StepUP-P150 dataset?", "chunk_id": 26, "split": "test"}
+{"question": "How does the normalization step contribute to the consistency of feature extraction in the dataset?", "chunk_id": 26, "split": "test"}
+{"question": "Define the role of background removal in the preprocessing pipeline of the UNB StepUP-P150 dataset.", "chunk_id": 26, "split": "test"}
+{"question": "What is the accuracy rate of the Vision Transformer model in classifying bloodstain patterns?", "chunk_id": 52, "split": "train"}
+{"question": "How does the system provide an objective alternative to manual visual inspection in forensic analysis?", "chunk_id": 52, "split": "train"}
+{"question": "Define the term 'probabilistic confidence scores' as it relates to the deep learning framework described.", "chunk_id": 52, "split": "train"}
+{"question": "Which Sustainable Development Goals are mapped to the project in Table F.1?", "chunk_id": 12, "split": "test"}
+{"question": "What type of loss function is used to predict height in the deep learning model?", "chunk_id": 35, "split": "train"}
+{"question": "How does the program provide information about bloodstain images to the user?", "chunk_id": 35, "split": "train"}
+{"question": "What is the purpose of using probabilistic confidence values in the analysis of bloodstain patterns?", "chunk_id": 35, "split": "train"}
+{"question": "What are the main limitations of the current approach in forensic analysis?", "chunk_id": 53, "split": "train"}
+{"question": "Why is testing with larger, real-world datasets important for improving forensic models?", "chunk_id": 53, "split": "train"}
+{"question": "Define the term 'cast-off stains' in the context of forensic reasoning.", "chunk_id": 53, "split": "train"}
+{"question": "What is the F1 Score for the bloodstain classification method labeled as 'Cast-Oﬀ'?", "chunk_id": 38, "split": "train"}
+{"question": "Why are evenly spaced, vertically oriented stains classified as drip patterns?", "chunk_id": 38, "split": "train"}
+{"question": "Define the term 'backspatter' in the context of bloodstain classification.", "chunk_id": 38, "split": "train"}
+{"question": "What is the purpose of the CNN with regression in the Footprint demographic prediction step?", "chunk_id": 32, "split": "train"}
+{"question": "How does the system handle an image when no blood is identified during the initial processing?", "chunk_id": 32, "split": "train"}
+{"question": "What type of summary does the reporting dashboard provide after processing the two pipelines?", "chunk_id": 32, "split": "train"}
+{"question": "What is the purpose of using a Vision Transformer in analyzing bloodstain patterns?", "chunk_id": 58, "split": "test"}
+{"question": "How does the ResNet-18 network contribute to the analysis of footprint impressions?", "chunk_id": 58, "split": "test"}
+{"question": "Define the role of probability confidence levels in the deep learning framework described.", "chunk_id": 58, "split": "test"}
+{"question": "What is the primary purpose of using deep learning in forensic analysis?", "chunk_id": 13, "split": "test"}
+{"question": "How does the Vision Transformer differ from a Convolutional Neural Network in forensic applications?", "chunk_id": 13, "split": "test"}
+{"question": "Define the role of Mean Squared Error in evaluating the performance of a forensic model.", "chunk_id": 13, "split": "test"}
+{"question": "What is the purpose of bloodstain profiling in forensic analysis?", "chunk_id": 51, "split": "train"}
+{"question": "How does suspect profiling using foot impressions help in determining a suspect's age group?", "chunk_id": 51, "split": "train"}
+{"question": "Define crime scene investigation (CSI) as it relates to the use of deep learning in forensic science.", "chunk_id": 51, "split": "train"}
+{"question": "What are the main challenges in distinguishing impact and cast-off bloodstains, and why do they pose difficulties for analysis?", "chunk_id": 62, "split": "train"}
+{"question": "How do the performance issues of the models relate to environmental factors like lighting and noise?", "chunk_id": 62, "split": "train"}
+{"question": "Define the term 'generalization' in the context of model performance on real-world data.", "chunk_id": 62, "split": "train"}
+{"question": "What role did Dr. Neelakantan P. C. play in the completion of the seminar report?", "chunk_id": 2, "split": "train"}
+{"question": "Why is it important to acknowledge the contributions of individuals and institutions in academic work?", "chunk_id": 2, "split": "train"}
+{"question": "What is the standard split ratio used for dividing datasets in this context?", "chunk_id": 27, "split": "test"}
+{"question": "Why is splitting datasets into training, validation, and testing subsets important for deep learning models?", "chunk_id": 27, "split": "test"}
+{"question": "Define the term 'non-overlapping manner' in the context of dataset division.", "chunk_id": 27, "split": "test"}
+{"question": "What bloodstain class showed the highest F1 score in the classification results?", "chunk_id": 37, "split": "train"}
+{"question": "Why did the drip and transfer bloodstain classes achieve higher F1 scores compared to others?", "chunk_id": 37, "split": "train"}
+{"question": "Define the F1 score in the context of bloodstain classification performance.", "chunk_id": 37, "split": "train"}
+{"question": "What is the accuracy rate of the Vision Transformer model in classifying bloodstain patterns?", "chunk_id": 5, "split": "train"}
+{"question": "How does the ResNet-18 network predict demographic attributes from footprint impressions?", "chunk_id": 5, "split": "train"}
+{"question": "What are the five types of bloodstain patterns identified in the study?", "chunk_id": 5, "split": "train"}
+{"question": "What is the purpose of the footprint analysis module in identifying foot morphology?", "chunk_id": 34, "split": "train"}
+{"question": "How does the ResNet-18 CNN contribute to the classification of footprints?", "chunk_id": 34, "split": "train"}
+{"question": "Define the term 'demographic morphology profiles' as it relates to footprint analysis.", "chunk_id": 34, "split": "train"}
+{"question": "What is the main focus of the research conducted by Y. Zhao and colleagues in 2023?", "chunk_id": 56, "split": "test"}
+{"question": "How do the technologies described in the 2023 study by M. Esposito and colleagues contribute to crime scene investigation?", "chunk_id": 56, "split": "test"}
+{"question": "Define the concept of foot-type classification as it is applied in the study by Y. Zhao et al.", "chunk_id": 56, "split": "test"}
+{"question": "What does the probability value of 0.5 indicate about the model's confidence in predicting a footprint category?", "chunk_id": 43, "split": "train"}
+{"question": "Compare the classification of the second and fourth predictions in the demographic report with their respective probability values.", "chunk_id": 43, "split": "train"}
+{"question": "Define the term 'age boundary error' as it relates to the classification of footprints in the given passage.", "chunk_id": 43, "split": "train"}
+{"question": "What is the accuracy rate of the gender classification module in the system?", "chunk_id": 6, "split": "train"}
+{"question": "How does the system improve the standardization of forensic evidence analysis?", "chunk_id": 6, "split": "train"}
+{"question": "Define the role of the common preprocessing pipeline in the system's functionality.", "chunk_id": 6, "split": "train"}
+{"question": "What is the significance of probabilistic outputs in forensic analysis?", "chunk_id": 61, "split": "train"}
+{"question": "Compare the performance of Vision Transformer and ResNet-18 in bloodstain pattern recognition.", "chunk_id": 61, "split": "train"}
+{"question": "Define F1 score and explain its relevance in evaluating classification models.", "chunk_id": 61, "split": "train"}
+{"question": "What is the purpose of using YOLOv8 in the detection of barefoot footprints?", "chunk_id": 8, "split": "train"}
+{"question": "How do improved Siamese networks with Transformers enhance the matching of barefoot and in-socks footprints?", "chunk_id": 8, "split": "train"}
+{"question": "How does the project contribute to the goals of SDG 9?", "chunk_id": 63, "split": "train"}
+{"question": "Define the role of standardized forensic analysis in supporting SDG 16.", "chunk_id": 63, "split": "train"}
+{"question": "Why is it challenging to analyze footprints in forensic investigations?", "chunk_id": 15, "split": "train"}
+{"question": "How does the system provide more flexibility in forensic analysis compared to traditional methods?", "chunk_id": 47, "split": "train"}
+{"question": "Why was the seminar report on blood-stain patterns and footprint impressions submitted?", "chunk_id": 1, "split": "test"}
+{"question": "What is the primary purpose of Bloodstain Pattern Analysis in crime scene investigation?", "chunk_id": 14, "split": "train"}
+{"question": "Why are bloodstain patterns and footprints considered important evidence in forensic science?", "chunk_id": 14, "split": "train"}
+{"question": "How do experts currently analyze bloodstain patterns and footprint impressions in crime scenes?", "chunk_id": 14, "split": "train"}

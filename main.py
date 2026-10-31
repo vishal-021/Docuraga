@@ -15,9 +15,13 @@ from spinner import Spinner
 from workspace import WorkSpace
 from worker import GatherWorker, QueryWorker, IndexWorker
 from style import DARK_STYLE
+from PySide6.QtWidgets import QFileDialog
+import shutil
 
 WORKSPACES_DIR = "workspaces"
 DB_PATH = "program.db"
+
+
 
 
 class NavbarItem(QPushButton):
@@ -191,6 +195,7 @@ class StatusRow(QWidget):
 class GatherPanel(QWidget):
 
     indexRequested = Signal()
+    uploadRequested = Signal()
 
     def __init__(self):
         super().__init__()
@@ -212,12 +217,20 @@ class GatherPanel(QWidget):
             buttonText="Gather"
         )
 
+        h = self.chatBox.sizeHint().height() or 60
+
+        self.uploadButton = QPushButton("Upload PDFs")
+        self.uploadButton.setObjectName("IndexButton")
+        self.uploadButton.setFixedHeight(h)
+        self.uploadButton.clicked.connect(self.uploadRequested.emit)
+
         self.indexButton = QPushButton("Index Folder")
         self.indexButton.setObjectName("IndexButton")
-        self.indexButton.setFixedHeight(self.chatBox.sizeHint().height() or 60)
+        self.indexButton.setFixedHeight(h)
         self.indexButton.clicked.connect(self.indexRequested.emit)
 
         bottomRow.addWidget(self.chatBox, 1)
+        bottomRow.addWidget(self.uploadButton)
         bottomRow.addWidget(self.indexButton)
 
         layout.addWidget(self.chat)
@@ -225,8 +238,8 @@ class GatherPanel(QWidget):
         layout.addLayout(bottomRow)
 
         self.chatBox.setEnabled(False)
+        self.uploadButton.setEnabled(False)
         self.indexButton.setEnabled(False)
-
 
 class QueryPanel(QWidget):
     """Chat panel for asking questions against the indexed PDFs."""
@@ -280,6 +293,7 @@ class MainWindow(QMainWindow):
         self.gatherPanel = GatherPanel()
         self.gatherPanel.chatBox.sendMessage.connect(self.handle_gather)
         self.gatherPanel.indexRequested.connect(self.handle_index_folder)
+        self.gatherPanel.uploadRequested.connect(self.handle_upload)
 
         self.queryPanel = QueryPanel()
         self.queryPanel.chatBox.sendMessage.connect(self.handle_query)
@@ -289,6 +303,7 @@ class MainWindow(QMainWindow):
 
         self.mainLayout.addWidget(self.nav)
         self.mainLayout.addWidget(self.tabs)
+
 
         os.makedirs(WORKSPACES_DIR, exist_ok=True)
         self.load_workspaces()
@@ -342,6 +357,7 @@ class MainWindow(QMainWindow):
 
         self.gatherPanel.chatBox.setEnabled(True)
         self.gatherPanel.indexButton.setEnabled(True)
+        self.gatherPanel.uploadButton.setEnabled(True)
         self.queryPanel.chatBox.setEnabled(True)
         
         self.gatherPanel.chat.clear()
@@ -405,6 +421,25 @@ class MainWindow(QMainWindow):
         text = f"Something went wrong: {message}"
         self.gatherPanel.chat.addMessage("system", text)
         self._save("gather", "system", text)
+
+    def handle_upload(self):
+        if self.currentWorkspace is None:
+            QMessageBox.information(self, "No workspace", "Create or select a workspace first.")
+            return
+
+        files, _ = QFileDialog.getOpenFileNames(
+            self, "Select PDFs", "", "PDF files (*.pdf)"
+        )
+        if not files:
+            return
+
+        os.makedirs(self.currentWorkspace.pdfPath, exist_ok=True)
+        for f in files:
+            destination = os.path.join(self.currentWorkspace.pdfPath, os.path.basename(f))
+            if os.path.abspath(f) != os.path.abspath(destination):
+                shutil.copy2(f, destination)
+
+        self.handle_index_folder()
 
     def handle_index_folder(self):
         if self.currentWorkspace is None:

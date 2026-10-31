@@ -6,7 +6,7 @@ class SearchQueries(BaseModel):
 
 def GenerateQueries(message):
     response = ollama.chat(
-        model="qwen3:4b",
+        model="qwen3:8b",
         messages=[
             {
                 "role": "user",

@@ -1,7 +1,7 @@
 import ollama
 
 
-def GenerateAnswer(prompt, model="qwen3:4b"):
+def GenerateAnswer(prompt, model="qwen3:8b"):
     response = ollama.chat(
         model=model,
         messages=[
